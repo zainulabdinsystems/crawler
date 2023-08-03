@@ -3,11 +3,10 @@ from bs4 import BeautifulSoup
 import time
 import urllib3
 from twilio.rest import Client
-import ssl
 
 # Disable SSL certificate verification
-requests.packages.urllib3.disable_warnings()
-ssl._create_default_https_context = ssl._create_unverified_context
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 
 # Twilio credentials
 account_sid = 'AC4d2854118cd617f64e51ada8c08cea20'
